@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportsControl · Reservas para comunidades sin conflictos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Sistema premium de reservas para comunidades: sin usuarios, sin apps y sin complicaciones. Ideal para urbanizaciones con alquiler turístico, alta rotación y necesidad de control simple." />
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(16,185,129,0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(14,165,233,0.14), transparent 26%),
+        linear-gradient(180deg, #f8fafc 0%, #f0fdf4 48%, #ecfeff 100%);
+      min-height: 100vh;
+    }
+
+    .glass {
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 20px 50px rgba(15,23,42,0.08);
+    }
+
+    .glass-dark {
+      background: rgba(15,23,42,0.86);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 24px 70px rgba(15,23,42,0.28);
+      backdrop-filter: blur(16px);
+    }
+
+    .phone {
+      border-radius: 2.4rem;
+      border: 10px solid #0f172a;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(15,23,42,0.20);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 34%;
+      height: 22px;
+      border-radius: 999px;
+      background: #0f172a;
+      z-index: 2;
+    }
+
+    .section-blur {
+      position: absolute;
+      inset: auto;
+      width: 280px;
+      height: 280px;
+      filter: blur(70px);
+      border-radius: 999px;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-white/40 bg-white/70 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 text-white grid place-items-center text-xl font-black shadow-lg shadow-emerald-500/20">P</div>
+        <div>
+          <div class="font-black text-slate-900 tracking-tight">SportsControl</div>
+          <div class="text-xs text-slate-500 -mt-0.5">Reservas para comunidades</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="#problema" class="hover:text-slate-900">Problema</a>
+        <a href="#solucion" class="hover:text-slate-900">Solución</a>
+        <a href="#para-quien" class="hover:text-slate-900">Para quién es</a>
+        <a href="#precio" class="hover:text-slate-900">Precios</a>
+        <a href="#faq" class="hover:text-slate-900">FAQ</a>
+      </nav>
+
+      <a href="#contacto" class="rounded-2xl bg-slate-900 text-white px-4 py-2 font-bold hover:scale-[1.02] transition shadow-lg shadow-slate-900/10">
+        Solicitar información
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="section-blur bg-emerald-300 top-20 left-0"></div>
+      <div class="section-blur bg-cyan-300 top-12 right-8"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/80 border border-emerald-200 px-4 py-2 text-sm font-bold text-emerald-700 shadow-sm">
+              <span>🏘️</span>
+              <span>Hecho para comunidades con uso real</span>
+            </div>
+
+            <h1 class="mt-6 text-4xl md:text-6xl font-black tracking-tight text-slate-900 leading-tight max-w-3xl">
+              La forma más simple de
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">reservar pistas y zonas comunes</span>
+              sin conflictos, sin cuentas y sin apps.
+            </h1>
+
+            <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl">
+              SportsControl sustituye el caos del WhatsApp y las reservas manuales por una experiencia clara, rápida y lista para cualquier vecino o huésped.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="#demo" class="rounded-2xl bg-emerald-600 text-white px-6 py-4 text-center font-black hover:bg-emerald-700 transition shadow-xl shadow-emerald-600/20">
+                Ver cómo funciona
+              </a>
+              <a href="#precio" class="rounded-2xl bg-white border border-slate-200 text-slate-800 px-6 py-4 text-center font-black hover:bg-slate-50 transition">
+                Ver precios
+              </a>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-slate-600">
+              <div class="rounded-full bg-white/80 border border-slate-200 px-4 py-2">Sin usuarios ni contraseñas</div>
+              <div class="rounded-full bg-white/80 border border-slate-200 px-4 py-2">Acceso por enlace o QR</div>
+              <div class="rounded-full bg-white/80 border border-slate-200 px-4 py-2">Ideal para alquiler turístico</div>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="glass rounded-3xl px-5 py-5">
+                <div class="text-2xl">⚡</div>
+                <div class="mt-2 font-black text-slate-900">Reserva en segundos</div>
+                <div class="text-sm text-slate-600">Desde móvil y sin aprendizaje previo</div>
+              </div>
+              <div class="glass rounded-3xl px-5 py-5">
+                <div class="text-2xl">🔐</div>
+                <div class="mt-2 font-black text-slate-900">PIN por vivienda</div>
+                <div class="text-sm text-slate-600">Sin altas, cuentas ni soporte de acceso</div>
+              </div>
+              <div class="glass rounded-3xl px-5 py-5">
+                <div class="text-2xl">🧩</div>
+                <div class="mt-2 font-black text-slate-900">Menos gestión</div>
+                <div class="text-sm text-slate-600">Menos incidencias para administración y vecinos</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative flex justify-center lg:justify-end">
+            <div class="absolute -inset-8 bg-gradient-to-tr from-emerald-200/40 via-cyan-200/20 to-white/0 blur-3xl rounded-full"></div>
+
+            <div class="relative w-full max-w-[560px]">
+              <div class="glass-dark rounded-[2rem] p-5 mb-6 text-white">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <div class="text-sm uppercase tracking-[0.18em] text-emerald-300 font-bold">Más control</div>
+                    <div class="mt-1 text-2xl font-black">Menos conflictos en la comunidad</div>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 px-4 py-3 text-right">
+                    <div class="text-xs text-slate-300">Sistema</div>
+                    <div class="font-black">Siempre accesible</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center lg:justify-end">
+                <div class="phone w-[320px] sm:w-[370px]">
+                  <div class="bg-slate-900 text-white px-4 pt-10 pb-3 flex items-center justify-between">
+                    <div class="font-black">SportsControl</div>
+                    <div class="text-sm opacity-80">18:00</div>
+                  </div>
+
+                  <div class="p-4 bg-slate-50">
+                    <div class="glass rounded-3xl p-4">
+                      <div class="flex items-center gap-3">
+                        <div class="text-3xl">🎾</div>
+                        <div>
+                          <div class="font-black text-slate-900">Reserva de pista</div>
+                          <div class="text-sm text-slate-500">Urbanización Mar Jónica</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="glass rounded-3xl p-4 mt-4">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <div class="text-sm font-bold text-slate-700">Fecha</div>
+                          <div class="mt-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 font-semibold">sábado, 18 mayo</div>
+                        </div>
+                        <div class="rounded-2xl bg-emerald-50 text-emerald-700 px-3 py-2 text-xs font-black border border-emerald-200">Disponible</div>
+                      </div>
+
+                      <div class="text-sm font-bold text-slate-700 mt-4">Horas disponibles</div>
+                      <div class="mt-2 grid grid-cols-2 gap-2">
+                        <div class="rounded-2xl bg-emerald-100 text-emerald-800 px-3 py-3 text-center font-black">17:00</div>
+                        <div class="rounded-2xl bg-rose-100 text-rose-700 px-3 py-3 text-center font-black">18:00</div>
+                        <div class="rounded-2xl bg-emerald-100 text-emerald-800 px-3 py-3 text-center font-black ring-4 ring-emerald-300">19:00</div>
+                        <div class="rounded-2xl bg-slate-100 text-slate-400 px-3 py-3 text-center font-black">20:00</div>
+                      </div>
+                    </div>
+
+                    <div class="glass rounded-3xl p-4 mt-4">
+                      <div class="text-sm font-bold text-slate-700">Vivienda</div>
+                      <div class="mt-2 grid grid-cols-3 gap-2">
+                        <div class="rounded-2xl border border-slate-200 bg-white px-3 py-3 text-center font-semibold">A</div>
+                        <div class="rounded-2xl border border-slate-200 bg-white px-3 py-3 text-center font-semibold">1</div>
+                        <div class="rounded-2xl border border-slate-200 bg-white px-3 py-3 text-center font-semibold">2</div>
+                      </div>
+
+                      <div class="text-sm font-bold text-slate-700 mt-4">PIN</div>
+                      <div class="mt-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 font-semibold tracking-[0.4em]">••••</div>
+
+                      <button class="mt-4 w-full rounded-2xl bg-emerald-600 text-white px-4 py-4 font-black shadow-lg shadow-emerald-600/20">
+                        Confirmar reserva
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute -bottom-4 left-0 glass rounded-3xl px-5 py-4 hidden md:block">
+                <div class="text-xs uppercase tracking-wide text-slate-500 font-bold">Beneficio principal</div>
+                <div class="mt-1 font-black text-slate-900">Menos mensajes, menos errores, menos fricción</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass rounded-[2rem] px-6 py-6 md:px-8 md:py-7">
+          <div class="grid md:grid-cols-4 gap-6 text-center md:text-left items-center">
+            <div>
+              <div class="text-sm uppercase tracking-[0.18em] text-slate-500 font-bold">Diseñado para</div>
+              <div class="mt-1 text-lg font-black text-slate-900">Comunidades que quieren simplicidad real</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-slate-900">Sin app</div>
+              <div class="text-sm text-slate-600">Solo navegador o QR</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-slate-900">Sin cuentas</div>
+              <div class="text-sm text-slate-600">Acceso por vivienda</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-slate-900">Sin caos</div>
+              <div class="text-sm text-slate-600">Normas y horarios claros</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema" class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+          El problema no es reservar.
+          <span class="text-slate-500">Es gestionar el caos.</span>
+        </h2>
+
+        <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+          Cuando una comunidad depende de mensajes, normas informales o herramientas demasiado complejas, aparecen conflictos, errores y pérdida de tiempo.
+        </p>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-5 text-left">
+          <div class="glass rounded-3xl p-6">
+            <div class="text-2xl">❌</div>
+            <div class="mt-3 font-black text-slate-900">Reservas duplicadas o discutidas</div>
+            <p class="mt-2 text-slate-600">La pista parece libre, pero alguien ya la había pedido por otro canal.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-2xl">❌</div>
+            <div class="mt-3 font-black text-slate-900">WhatsApp se convierte en administración</div>
+            <p class="mt-2 text-slate-600">Mensajes sueltos, capturas, dudas constantes y normas difíciles de aplicar.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-2xl">❌</div>
+            <div class="mt-3 font-black text-slate-900">Alta rotación de usuarios</div>
+            <p class="mt-2 text-slate-600">Huéspedes, alquiler vacacional o vecinos temporales que cambian continuamente.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-2xl">❌</div>
+            <div class="mt-3 font-black text-slate-900">Las apps generalistas sobran</div>
+            <p class="mt-2 text-slate-600">Exigen cuentas, soporte y procesos que una comunidad normalmente no necesita.</p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-lg font-bold text-slate-800">
+          SportsControl elimina esa fricción con una experiencia directa y fácil de usar desde el primer día.
+        </p>
+      </div>
+    </section>
+
+    <section id="solucion" class="py-20 bg-white/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-bold text-emerald-700">
+            La solución
+          </div>
+          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900">
+            Una web simple por fuera.
+            <span class="text-emerald-600">Mucho control por dentro.</span>
+          </h2>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+            Cada vecino o huésped accede con un enlace o QR, elige instalación y hora, introduce su vivienda y PIN, y confirma la reserva en segundos.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="glass rounded-3xl p-7">
+            <div class="text-4xl">📱</div>
+            <div class="mt-4 text-xl font-black text-slate-900">No requiere instalación</div>
+            <p class="mt-2 text-slate-600">Se usa desde cualquier móvil con navegador. También se puede compartir por QR en zonas comunes.</p>
+          </div>
+          <div class="glass rounded-3xl p-7">
+            <div class="text-4xl">🕒</div>
+            <div class="mt-4 text-xl font-black text-slate-900">Reserva en menos de 1 minuto</div>
+            <p class="mt-2 text-slate-600">La interfaz está diseñada para que cualquiera entienda el proceso al instante, incluso en estancias cortas.</p>
+          </div>
+          <div class="glass rounded-3xl p-7">
+            <div class="text-4xl">⚙️</div>
+            <div class="mt-4 text-xl font-black text-slate-900">Normas aplicadas automáticamente</div>
+            <p class="mt-2 text-slate-600">Límites por vivienda, horarios, bloqueos y lógica de uso según las necesidades de la comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="para-quien" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900">¿Para quién es SportsControl?</h2>
+          <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+            No está pensado para todo el mundo. Está pensado para comunidades que quieren una solución práctica, fácil de implantar y fácil de usar.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div class="glass rounded-3xl p-6">
+            <div class="text-3xl">🏢</div>
+            <div class="mt-4 font-black text-slate-900">Comunidades residenciales</div>
+            <p class="mt-2 text-slate-600 text-sm">Que necesitan organizar pistas, piscina, gimnasio o zonas comunes sin complicarse con herramientas excesivas.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-3xl">🌴</div>
+            <div class="mt-4 font-black text-slate-900">Urbanizaciones vacacionales</div>
+            <p class="mt-2 text-slate-600 text-sm">Perfecto para entornos con huéspedes, alquiler turístico y rotación continua durante el año.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-3xl">🧾</div>
+            <div class="mt-4 font-black text-slate-900">Administradores y presidentes</div>
+            <p class="mt-2 text-slate-600 text-sm">Que quieren reducir incidencias, preguntas repetidas y gestión manual de reservas.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-3xl">🔁</div>
+            <div class="mt-4 font-black text-slate-900">Comunidades con alta rotación</div>
+            <p class="mt-2 text-slate-600 text-sm">Donde pedir a cada usuario que cree una cuenta es inviable o genera demasiada fricción.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+              Pensado para venderse solo cuando lo ven claro
+            </h2>
+            <p class="mt-4 text-lg text-slate-600">
+              La propuesta es simple: menos fricción para el usuario, menos trabajo para la comunidad y más orden en el uso de instalaciones.
+            </p>
+
+            <div class="mt-8 space-y-5">
+              <div class="glass rounded-3xl p-5">
+                <div class="font-black text-slate-900">Sin usuarios y sin soporte de acceso</div>
+                <p class="mt-1 text-slate-600">No hay que explicar altas, contraseñas, recuperación de claves ni procesos largos.</p>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <div class="font-black text-slate-900">Muy adecuado para alquiler turístico</div>
+                <p class="mt-1 text-slate-600">La vivienda es el punto de acceso, así que el sistema encaja mucho mejor con huéspedes y usos temporales.</p>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <div class="font-black text-slate-900">Menos carga operativa para la comunidad</div>
+                <p class="mt-1 text-slate-600">Las reglas se aplican dentro del sistema, reduciendo discusiones y gestión manual.</p>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <div class="font-black text-slate-900">Implantación rápida y clara</div>
+                <p class="mt-1 text-slate-600">Se configura para cada comunidad y queda listo para usar con acceso por enlace o QR.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="demo" class="glass rounded-[2rem] p-6 md:p-8">
+            <div class="text-sm font-bold uppercase tracking-wide text-emerald-700">Demo visual</div>
+            <h3 class="mt-2 text-2xl font-black text-slate-900">Cómo lo vive un vecino</h3>
+            <p class="mt-2 text-slate-600">Sin tutoriales. Sin llamadas. Sin pedir ayuda.</p>
+
+            <div class="mt-6 space-y-4">
+              <div class="rounded-3xl bg-white border border-slate-200 p-5">
+                <div class="text-sm text-slate-500">1. Entra con enlace o QR</div>
+                <div class="mt-2 text-lg font-black text-slate-900">Accede a la reserva desde el móvil</div>
+              </div>
+
+              <div class="rounded-3xl bg-white border border-slate-200 p-5">
+                <div class="text-sm text-slate-500">2. Elige fecha y hora</div>
+                <div class="mt-3 grid grid-cols-3 gap-2">
+                  <div class="rounded-2xl bg-emerald-100 text-emerald-800 px-3 py-3 text-center font-black">17:00</div>
+                  <div class="rounded-2xl bg-slate-100 text-slate-400 px-3 py-3 text-center font-black">18:00</div>
+                  <div class="rounded-2xl bg-emerald-100 text-emerald-800 px-3 py-3 text-center font-black">19:00</div>
+                </div>
+              </div>
+
+              <div class="rounded-3xl bg-white border border-slate-200 p-5">
+                <div class="text-sm text-slate-500">3. Introduce vivienda y PIN</div>
+                <div class="mt-3 grid grid-cols-4 gap-2">
+                  <div class="rounded-2xl border border-slate-200 px-3 py-3 text-center font-bold">B</div>
+                  <div class="rounded-2xl border border-slate-200 px-3 py-3 text-center font-bold">2</div>
+                  <div class="rounded-2xl border border-slate-200 px-3 py-3 text-center font-bold">1</div>
+                  <div class="rounded-2xl border border-slate-200 px-3 py-3 text-center font-bold">••••</div>
+                </div>
+                <div class="mt-4 rounded-2xl bg-emerald-600 text-white text-center px-4 py-4 font-black shadow-lg shadow-emerald-600/20">
+                  Confirmar reserva
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="precio" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+          Precios claros para decidir sin fricción
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+          Una inversión sencilla para eliminar errores, ahorrar tiempo de gestión y dar una experiencia mucho más ordenada a la comunidad.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6 items-stretch">
+          <div class="glass rounded-3xl p-8 text-left flex flex-col">
+            <div class="text-sm font-bold uppercase tracking-wide text-slate-500">Pequeñas</div>
+            <div class="mt-2 text-xl font-black text-slate-900">Hasta 20 viviendas</div>
+            <div class="mt-6 text-5xl font-black text-slate-900">200€</div>
+            <div class="mt-2 text-slate-500 font-semibold">+ 10€/mes</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-600">
+              <li>✓ Configuración inicial</li>
+              <li>✓ Horarios y reglas básicas</li>
+              <li>✓ Acceso por móvil y QR</li>
+            </ul>
+            <a href="#contacto" class="mt-8 rounded-2xl bg-white border border-slate-200 text-slate-800 px-5 py-4 text-center font-black hover:bg-slate-50 transition">Solicitar información</a>
+          </div>
+
+          <div class="glass rounded-3xl p-8 ring-2 ring-emerald-300 relative text-left flex flex-col">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-600 text-white px-4 py-1 text-xs font-black shadow-lg shadow-emerald-600/20">
+              Más habitual
+            </div>
+            <div class="text-sm font-bold uppercase tracking-wide text-emerald-700">Medianas</div>
+            <div class="mt-2 text-xl font-black text-slate-900">21 a 50 viviendas</div>
+            <div class="mt-6 text-5xl font-black text-slate-900">350€</div>
+            <div class="mt-2 text-slate-500 font-semibold">+ 15€/mes</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-600">
+              <li>✓ Todo lo esencial</li>
+              <li>✓ Mejor equilibrio entre coste y uso</li>
+              <li>✓ Ideal para comunidades activas</li>
+            </ul>
+            <a href="#contacto" class="mt-8 rounded-2xl bg-emerald-600 text-white px-5 py-4 text-center font-black hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/20">Quiero este plan</a>
+          </div>
+
+          <div class="glass rounded-3xl p-8 text-left flex flex-col">
+            <div class="text-sm font-bold uppercase tracking-wide text-slate-500">Grandes</div>
+            <div class="mt-2 text-xl font-black text-slate-900">51+ viviendas</div>
+            <div class="mt-6 text-5xl font-black text-slate-900">500€+</div>
+            <div class="mt-2 text-slate-500 font-semibold">+ 20€/mes</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-600">
+              <li>✓ Más volumen y más control</li>
+              <li>✓ Adaptación a necesidades concretas</li>
+              <li>✓ Configuración para uso intensivo</li>
+            </ul>
+            <a href="#contacto" class="mt-8 rounded-2xl bg-white border border-slate-200 text-slate-800 px-5 py-4 text-center font-black hover:bg-slate-50 transition">Hablar sobre mi comunidad</a>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-slate-500">
+          Implantación rápida, configuración adaptada y mantenimiento simple.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white/50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900">Preguntas frecuentes</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            Las dudas que suelen aparecer antes de tomar la decisión.
+          </p>
+        </div>
+
+        <div class="mt-12 space-y-4">
+          <details class="faq-item glass rounded-3xl p-6 group" open>
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-black text-slate-900 text-lg">¿Hace falta que cada vecino cree una cuenta?</span>
+              <span class="text-2xl text-slate-400 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">No. Ese es uno de los puntos fuertes del sistema. El acceso se hace con vivienda y PIN, lo que reduce muchísimo la fricción y evita problemas de altas, bajas o contraseñas.</p>
+          </details>
+
+          <details class="faq-item glass rounded-3xl p-6 group">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-black text-slate-900 text-lg">¿Sirve para comunidades con alquiler turístico?</span>
+              <span class="text-2xl text-slate-400 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">Sí. Está especialmente bien planteado para comunidades con alta rotación, huéspedes o estancias temporales, porque evita depender de perfiles personales permanentes.</p>
+          </details>
+
+          <details class="faq-item glass rounded-3xl p-6 group">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-black text-slate-900 text-lg">¿Hay que instalar una app?</span>
+              <span class="text-2xl text-slate-400 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">No. SportsControl funciona desde el navegador del móvil. Se puede compartir por enlace directo o mediante un código QR colocado en la comunidad.</p>
+          </details>
+
+          <details class="faq-item glass rounded-3xl p-6 group">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-black text-slate-900 text-lg">¿Se pueden aplicar normas de uso?</span>
+              <span class="text-2xl text-slate-400 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">Sí. Se pueden configurar horarios, límites por vivienda y otras reglas de funcionamiento para evitar abusos y mantener un uso ordenado de las instalaciones.</p>
+          </details>
+
+          <details class="faq-item glass rounded-3xl p-6 group">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-black text-slate-900 text-lg">¿Cuánto tarda en estar listo?</span>
+              <span class="text-2xl text-slate-400 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">La implantación es rápida. Se adapta a la comunidad, se deja configurado y puede entregarse con acceso por QR para empezar a usarlo sin formación compleja.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-dark rounded-[2rem] p-8 md:p-12 text-center text-white relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-cyan-400/10 to-transparent"></div>
+          <div class="relative">
+            <div class="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-emerald-300">
+              Último empujón para convertir
+            </div>
+            <h2 class="mt-5 text-3xl md:text-5xl font-black">
+              En un día puede estar funcionando en tu comunidad
+            </h2>
+            <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
+              Se configura, se comparte el acceso y queda listo para usar. Sin instalación, sin formación compleja y sin añadir trabajo innecesario a la comunidad.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+              <a href="mailto:powacf@gmail.com?subject=Información%20SportsControl" class="rounded-2xl bg-emerald-600 text-white px-8 py-4 font-black hover:bg-emerald-700 transition shadow-xl shadow-emerald-600/20">
+                Solicitar información
+              </a>
+              <a href="https://wa.me/34648547427" class="rounded-2xl bg-white text-slate-900 px-8 py-4 font-black hover:bg-slate-100 transition">
+                Contactar por WhatsApp
+              </a>
+            </div>
+
+            <p class="mt-5 text-sm text-slate-400">Ideal para presidentes, administradores y comunidades que quieren una solución clara y lista para usar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-3xl px-6 py-6 text-center text-sm text-slate-600">
+        <p class="font-semibold text-slate-800 tracking-wide">SportsControl</p>
+        <p class="mt-2">Sistema inteligente de reservas para comunidades.</p>
+        <p class="mt-2">Desarrollado por <span class="font-semibold text-slate-700">Acuriel</span>.</p>
+        <p class="mt-2 text-slate-500">© 2026 Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
